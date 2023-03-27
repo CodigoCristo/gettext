@@ -15,3 +15,5 @@ export TEXTDOMAINDIR=locales
 #echo $(eval_gettext "hi") 
 
 dialog --yesno "$(eval_gettext "hi")" 0 0
+
+# EJECUTAMOS CON LANGUAGE=es_ES ./script.sh
