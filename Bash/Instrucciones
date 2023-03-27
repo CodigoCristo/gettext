@@ -1,0 +1,22 @@
+#http://eyesfreelinux.ninja/posts/internationalising-shell-scripts-with-gettext.html
+
+#Genera archivo base.pot usado en el script
+xgettext --from-code=UTF-8 --language=Shell --sort-output -o locales/base.pot script.sh
+
+#Crea carpeta de lenguaje local
+mkdir -p locales/es_ES/LC_MESSAGES/
+
+#Genera el archivo para el idiona ES
+msginit --input=locales/base.pot --locale=es_ES.UTF-8 --output=locales/es_ES/LC_MESSAGES/base.po
+
+#Genera el archivo base.mo
+msgfmt --output-file=locales/es_ES/LC_MESSAGES/base.mo locales/es_ES/LC_MESSAGES/base.po
+
+#Actualiza el archivo de lenguaje
+msgmerge --update msgmerge --update locales/es_ES/LC_MESSAGES/base.po locales/base.pot 
+
+
+
+
+
+
